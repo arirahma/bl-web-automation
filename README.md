@@ -2,7 +2,8 @@
 
 
 # Running
-
+cd bl-web-automation-main
+sudo chmod +x gradlew
 ./gradlew clean test
 
 # trobleshoot
