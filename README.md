@@ -6,6 +6,8 @@ cd bl-web-automation-main
 
 sudo chmod +x gradlew
 
+sudo chmod +x src/test/resources/chromedriver
+
 ./gradlew clean test
 
 # trobleshoot
