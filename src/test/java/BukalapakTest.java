@@ -17,6 +17,9 @@ public class BukalapakTest {
     By lanjutBtn = By.xpath("//*[@id='submit_button']");
     By verifikasiText = By.xpath("//*[@class='Verifikasi Login']");
     By errorText = By.xpath("//*[@class='bl-text-field__message']");
+    By logoBL = By.xpath("//*[@class='sigil-logo-full']");
+    By searchTextField = By.xpath("//*[@id='v-omnisearch__input']");
+    By searchBtn = By.xpath("//*[@class='v-omnisearch__submit']");
 
     @Before
     public void setup() {
@@ -51,5 +54,16 @@ public class BukalapakTest {
         driver.findElement(emailTextField).sendKeys("test@test");
         driver.findElement(lanjutBtn).click();
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(errorText)));
+    }
+    
+    @Test
+    public void searchProduct(){
+        driver.get("https://www.bukalapak.com/");
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(logoBL)));
+        driver.findElement(searchTextField).click();
+        driver.findElement(searchTextField).sendKeys("beras");
+        driver.findElement(searchBtn).click();
+        wait.until(ExpectedConditions.visibilityOf(driver.findElement(logoBL)));
+
     }
 }
